@@ -1,0 +1,20 @@
+{
+  "name": "cep-quan-doi-render",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {"node": ">=20"},
+  "scripts": {
+    "start": "node src/server.js",
+    "migrate": "node scripts/migrate.js",
+    "render-start": "npm run migrate && npm start",
+    "check": "node --check src/server.js && node --check scripts/migrate.js && node --check public/app.js"
+  },
+  "dependencies": {
+    "cookie-session": "^2.1.0",
+    "express": "^5.1.0",
+    "google-auth-library": "^10.3.0",
+    "helmet": "^8.1.0",
+    "pg": "^8.16.3"
+  }
+}
