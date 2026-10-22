@@ -1,7 +1,33 @@
-<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CEP - Tuyển sinh Quân đội</title><link rel="stylesheet" href="styles.css"></head><body>
-<header><div class="brand">CEP <span>Luyện thi Quân đội</span></div><nav><a href="#home">Trang chủ</a><a href="#health">Sức khỏe</a><a href="#chat">Hỏi đáp</a></nav></header>
-<main>
-<section id="home" class="hero"><p class="eyebrow">CEP · LUYỆN THI QUÂN ĐỘI</p><h1>Cổng thông tin tuyển sinh Quân đội</h1><p>Đây là bộ mã nguồn Render-ready để chuyển ứng dụng khỏi ChatGPT Sites. Khi ghép frontend tra cứu hiện tại vào thư mục <code>public/</code>, backend Render và PostgreSQL bên dưới vẫn giữ nguyên.</p><a class="btn" href="#chat">Vào phòng hỏi đáp</a></section>
-<section id="health" class="card"><h2>Nguyên tắc tra cứu sức khỏe</h2><p><strong>Thông tư 105/2023/TT-BQP</strong> là văn bản gốc. <strong>Thông tư 106/2025/TT-BQP</strong> chỉ sửa đổi, bổ sung các điều khoản cụ thể; phần không bị sửa đổi tiếp tục áp dụng theo Thông tư 105.</p><div class="note">Bản ZIP này là gói migration/backend. Dữ liệu tra cứu đầy đủ từ site CEP hiện tại cần được chép vào <code>public/</code> khi có bản export frontend.</div></section>
-<section id="chat" class="card"><div class="row"><div><h2>Hỏi đáp cùng CEP</h2><p>Học sinh đăng nhập Gmail, tự đặt tên hiển thị; CEP có quyền ẩn/hiện/xóa tin và ẩn tài khoản.</p></div><div id="userBox"></div></div><div id="loginBox"></div><form id="nameForm" hidden><input id="displayName" maxlength="40" placeholder="Tên hiển thị"><button class="btn">Đổi tên</button></form><div id="messages" class="messages"></div><form id="chatForm" hidden><textarea id="message" maxlength="2000" placeholder="Nhập câu hỏi..."></textarea><button class="btn">Gửi câu hỏi</button></form></section>
-</main><footer>CEP · Facebook: thiquandoi · TikTok: @cepluyenthiquandoi · Zalo 0344 412 040</footer><script src="app.js" type="module"></script></body></html>
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#173f2b"><title>CEP · Tra cứu tuyển sinh Quân đội</title>
+<meta name="description" content="Cổng tra cứu tuyển sinh quân đội: trường, điểm chuẩn, sức khỏe, QDA, hướng dẫn và hỏi đáp cùng CEP.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-shell">
+<aside class="sidebar" id="sidebar">
+  <a class="logo" href="#home" aria-label="CEP Luyện thi Quân đội"><span class="logo-mark">CEP</span><span><b>Luyện thi Quân đội</b><small>Tra cứu tuyển sinh</small></span></a>
+  <nav class="side-nav" id="nav">
+    <a href="#home" data-route="home">⌂ <span>Trang chủ</span></a>
+    <a href="#schools" data-route="schools">⌕ <span>Tra cứu trường</span></a>
+    <a href="#cutoffs" data-route="cutoffs">▥ <span>Điểm chuẩn 2026</span></a>
+    <a href="#conversion" data-route="conversion">⇄ <span>Quy đổi & tính điểm</span></a>
+    <a href="#health" data-route="health">♡ <span>Sức khỏe tuyển sinh</span></a>
+    <a href="#guides" data-route="guides">✓ <span>Sơ tuyển & xét tuyển</span></a>
+    <a href="#qda" data-route="qda">Q <span>Kỳ thi QDA</span></a>
+    <a href="#course" data-route="course">★ <span>Khóa QDA 2027</span></a>
+    <a href="#chat" data-route="chat">☏ <span>Hỏi đáp cùng CEP</span></a>
+    <a href="#sources" data-route="sources">▤ <span>Nguồn & tài liệu</span></a>
+  </nav>
+  <div class="side-contact"><b>Kết nối CEP</b><a target="_blank" rel="noopener" href="https://www.facebook.com/thiquandoi">Facebook</a><a target="_blank" rel="noopener" href="https://www.tiktok.com/@cepluyenthiquandoi">TikTok</a><a target="_blank" rel="noopener" href="https://www.facebook.com/groups/1792435505435411">Group Facebook</a><a href="tel:0344412040">Zalo 0344 412 040</a></div>
+</aside>
+<header class="topbar"><button class="menu-btn" id="menuBtn" aria-label="Mở menu">☰</button><div><b>CEP · TUYỂN SINH QUÂN ĐỘI</b><small>Dữ liệu 2026 · cập nhật nguồn công khai</small></div><a class="top-zalo" href="tel:0344412040">Tư vấn: 0344 412 040</a></header>
+<main id="main" tabindex="-1"></main>
+</div>
+<div class="toast" id="toast" hidden></div>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script type="module" src="app.js"></script>
+</body></html>
