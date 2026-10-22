@@ -119,5 +119,7 @@ app.patch('/api/admin/users/:id', requireAuth, requireAdmin, async (req,res) => 
   res.json({ok:true});
 });
 
-app.get('/{*splat}', (_req,res) => res.sendFile(path.join(root,'public','index.html')));
+app.get('/{*splat}', (_req,res) =>
+  res.sendFile(path.join(root, 'public', 'index.html'))
+);
 app.listen(port,'0.0.0.0',()=>console.log(`CEP listening on 0.0.0.0:${port}`));
